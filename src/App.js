@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+
 //pages
 import login from "./pages/login-page"
 import register from "./pages/sign-up-page"
@@ -10,7 +11,7 @@ function App() {
       <div className='Nav'>
       <nav>
         <h1>Title</h1>
-        <h1>Account</h1>
+        <h1>Account-username, image</h1>
       </nav>
       </div>
 

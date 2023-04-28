@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
 const login = () => {
-    // const [userName, setUserName] = useState("");
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
 
     const loginUsesr = (e) => {
         e.preventDefault();
