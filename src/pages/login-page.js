@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from 'react'
 
-const login = () => {
+const Login = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
@@ -9,12 +9,25 @@ const login = () => {
         console.log('working')
     }
     return (
-        
         <form onSubmit={loginUsesr}>
             <label>Username</label>
+            <input 
+                type="text" 
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                required
+            />
             <labe>Password</labe>
+            <input 
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+            />
+            <button type="submit">submit</button>
         </form>
+
     )
 }
 
-export default login;
+export default Login;

@@ -1,39 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState } from "react"
 
-const register = () => {
-    //need username and password requirements
+
+const Register = () => {
     const createAccount  = async (e) => {
         e.preventDefault()
-        if(
-            x=0
-        )
     }
     return (
     <div>
-        <Form>
-            <Form.Group>
-                <label>Account Photo</label>
-                <input 
-                    type="image"
-                />
-            </Form.Group>
-
-            <Form.group>
-                <label>Username</label>
-                <textarea 
-                    required
-                />
-            </Form.group>
-
-            <Form.group>
-                <label>Password</label>
-                <textarea 
-                    required
-                />
-            </Form.group>
-        </Form>
+        {/* need username and password requirements */}
+        <form onSubmit={createAccount}>
+            <label>Username</label>
+            <input type="text" required/>
+            <labe>Password</labe>
+            <input type="password" required/>
+            <button type="submit">submit</button>
+        </form>
     </div>
     )
 }
 
-export default register;
+export default Register;
