@@ -2,8 +2,8 @@ import './App.css';
 import { useState } from "react"
 
 //pages
-import Login from "./pages/login-page"
-import Register from "./pages/sign-up-page"
+import Login from "./pages/account_CRUD/login-page"
+import Register from "./pages/account_CRUD/sign-up-page"
 
 function App() {
   const [currentForm, setForm] = useState('login');
@@ -11,10 +11,7 @@ function App() {
   return (
     <div className="App">
       <div className='Nav'>
-      <nav>
-        <h1>Title</h1>
-        <h1>Account-username, image</h1>
-      </nav>
+      
       </div>
       <div className='login-page'>
         {
