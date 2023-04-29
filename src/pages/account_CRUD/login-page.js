@@ -1,35 +1,37 @@
-import { Fragment, useState } from 'react'
+import { useState, useEffect } from 'react'
+import supabase from '../../supabase';
 
 const Login = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
-    const loginUsesr = (e) => {
-        e.preventDefault();
-        console.log('working')
-    }
-    return (
-        <Fragment>
-        <form onSubmit={loginUsesr}>
-            <label>Username</label>
-            <input 
-                type="text" 
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
-                required
-            />
-            <labe>Password</labe>
-            <input 
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-            />
-            <button type="submit">submit</button>
-        </form>
-        </Fragment>
+//    useEffect(() => {
+//     const loginUser = async (e)=> {
+//         console.log("error")
+//    })
 
-    )
+   return (
+    <div>
+    <form >
+        <label>Username</label>
+        <input 
+            type="text" 
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            required
+        />
+        <labe>Password</labe>
+        <input 
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+        />
+        <button type="submit">submit</button>
+    </form>
+    </div>
+)
+
 }
 
 export default Login;

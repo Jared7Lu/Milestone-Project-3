@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from "react"
+import supabase from './supabase';
 
 //pages
 import Login from "./pages/account_CRUD/login-page"
@@ -11,12 +12,13 @@ function App() {
   return (
     <div className="App">
       <div className='Nav'>
-      
       </div>
       <div className='login-page'>
-        {
+        {/* {
           currentForm == "login" ? <Login /> : <Register />
-        }
+        } */}
+        <Login />
+        <Register />
       </div>
     </div>
   );
