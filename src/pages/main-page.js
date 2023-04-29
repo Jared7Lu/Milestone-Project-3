@@ -8,11 +8,11 @@ import post from "./posts_CRUD/post-component";
 import update_post from "./posts_CRUD/update-post";
 import Account from "./account_CRUD/account-page";
 
-const mainPage = () => {
+const mainPage = ({token}) => {
   
     return (
       <div>
-        <h3>Welcome back, </h3>
+        <h3> {token.user.user_metadata.usrname}</h3>
       </div>
     )
   }
