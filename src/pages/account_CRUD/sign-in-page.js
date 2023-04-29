@@ -1,6 +1,6 @@
 import { useState } from "react";
 import supabase from "../../supabase";
-
+import { Link } from "react-router-dom";
 const Register = () => {
   const [signForm, setSignForm] = useState({
     email: "",
@@ -64,6 +64,7 @@ const Register = () => {
 
         <button type="submit">submit</button>
       </form>
+      <Link to='/'>log in</Link>
     </div>
   );
 };

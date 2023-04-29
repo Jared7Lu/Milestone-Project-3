@@ -1,7 +1,7 @@
 import supabase from "../../supabase"
 import { useState } from "react"
-    const create_post = () => {
+    const createPost = () => {
         console.log("create")
 }
 
-export default create_post;
+export default createPost;

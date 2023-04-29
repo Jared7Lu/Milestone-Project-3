@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import supabase from "../../supabase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = ({ setToken }) => {
+  let navigate = useNavigate()
+
   const [signForm, setSignForm] = useState({
     email: "",
     password: "",
@@ -24,8 +26,8 @@ const Login = ({ setToken }) => {
       password: signForm.password,
     });
     if (error) throw error;
-    console.log(data);
     setToken(data);
+    navigate('/main-page')
   };
 
   return (
@@ -50,6 +52,7 @@ const Login = ({ setToken }) => {
         />
         <button type="submit">submit</button>
       </form>
+      <Link to='/register'>Sign Up</Link> 
     </div>
   );
 };
