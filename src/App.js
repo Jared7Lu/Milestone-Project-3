@@ -7,19 +7,11 @@ import Login from "./pages/account_CRUD/login-page"
 import Register from "./pages/account_CRUD/sign-in-page"
 
 function App() {
-  const [currentForm, setForm] = useState('login');
 
   return (
     <div className="App">
-      <div className='Nav'>
-      </div>
-      <div className='login-page'>
-        {/* {
-          currentForm == "login" ? <Login /> : <Register />
-        } */}
         <Login />
         <Register />
-      </div>
     </div>
   );
 }
