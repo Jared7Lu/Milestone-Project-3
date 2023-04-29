@@ -7,7 +7,7 @@ const Register = () => {
     username: "",
     password: "",
   });
-
+  
   function updateForm(event) {
     setSignForm((prevFormData) => {
       return {
@@ -16,7 +16,7 @@ const Register = () => {
       };
     });
   }
-
+ 
   const createAccount = async (e) => {
     e.preventDefault();
     const { data, error } = await supabase.auth.signUp({
@@ -28,6 +28,8 @@ const Register = () => {
         },
       },
     });
+    if (error) throw error
+          console.log(data)
   };
 
   return (

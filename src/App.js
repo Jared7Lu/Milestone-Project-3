@@ -4,7 +4,7 @@ import supabase from './supabase';
 
 //pages
 import Login from "./pages/account_CRUD/login-page"
-import Register from "./pages/account_CRUD/sign-up-page"
+import Register from "./pages/account_CRUD/sign-in-page"
 
 function App() {
   const [currentForm, setForm] = useState('login');

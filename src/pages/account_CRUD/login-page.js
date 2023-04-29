@@ -1,37 +1,57 @@
-import { useState, useEffect } from 'react'
-import supabase from '../../supabase';
+import { useState, useEffect } from "react";
+import supabase from "../../supabase";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
+const Login = ({ setToken }) => {
+  const [signForm, setSignForm] = useState({
+    email: "",
+    password: "",
+  });
 
-//    useEffect(() => {
-//     const loginUser = async (e)=> {
-//         console.log("error")
-//    })
+  function updateForm(event) {
+    setSignForm((prevFormData) => {
+      return {
+        ...prevFormData,
+        [event.target.name]: event.target.value,
+      };
+    });
+  }
 
-   return (
+  const login = async (e) => {
+    e.preventDefault();
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: signForm.email,
+      password: signForm.password,
+    });
+    if (error) throw error;
+    console.log(data);
+    setToken(data);
+  };
+
+  return (
     <div>
-    <form >
-        <label>Username</label>
-        <input 
-            type="text" 
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-            required
+      <form onSubmit={login}>
+        <label>Email</label>
+        <input
+          name="email"
+          type="text"
+          placeholder="example@email.com"
+          onChange={updateForm}
+          required
         />
+
         <labe>Password</labe>
-        <input 
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
+        <input
+          name="password"
+          type="password"
+          placeholder="password"
+          onChange={updateForm}
+          required
         />
         <button type="submit">submit</button>
-    </form>
+      </form>
     </div>
-)
-
-}
+  );
+};
 
 export default Login;
