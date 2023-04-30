@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 //icons
 import { TfiUser } from "react-icons/tfi";
-import { AiFillHome, AiOutlinePlusSquare } from "react-icons/ai";
+import { AiFillHome, AiOutlineUpload} from "react-icons/ai";
 import { TfiAlignJustify } from "react-icons/tfi";
 
 const SideBar = () => {
@@ -23,7 +23,7 @@ const SideBar = () => {
     {
         path:"/create-post",
         name:"Create",
-        icon:<AiOutlinePlusSquare/>
+        icon:<AiOutlineUpload/>
     }
     ]
     return (
@@ -34,15 +34,17 @@ const SideBar = () => {
                        <TfiAlignJustify onClick={toggle}/>
                 </div>
             </div>
+            <div>
             {
                    navbarList.map((item, index)=>(
-                       <NavLink to={item.path} key={index} >
-                           <div className="icon">{item.icon}</div>
-                           <div style={{display: opened ? "block" : "none"}} className="link_text">{item.name}</div>
-                       </NavLink>
+                       <Link to={item.path} key={index} >
+                           {item.icon}
+                           <div style={{display: opened ? "block" : "none"}} className="link_text">{item.name}</div>                          
+                       </Link>                   
                    ))
                }
         </div>
+    </div>
     )
 }
 

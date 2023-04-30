@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import supabase from "../../supabase";
 import { Link, useNavigate } from "react-router-dom";
 import "./forums.css"
 
 const Login = ({ setToken }) => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [signForm, setSignForm] = useState({
     email: "",
