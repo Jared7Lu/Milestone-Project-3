@@ -10,7 +10,7 @@ const Account = ({ token }) => {
     navigate("/");
   }
   return (
-    <div>
+    <div className="">
       <Link to="/main-page">
         <Button>main page</Button>
       </Link>

@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import supabase from './supabase';
 import { useEffect, useState } from 'react';
-
+import SideBar from './components/side-nav';
 //pages
 import Login from "./pages/account_CRUD/login-page";
 import Register from "./pages/account_CRUD/sign-in-page";
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter>     
         <Routes>
           <Route path={"/register"} element={ <Register />}/>
           <Route path={"/"} element={ <Login setToken={setToken}/>}/>
@@ -40,6 +40,8 @@ function App() {
           <Route path={"/update-post"} element={ <UpdatePost />}/>
         </Routes>
       </BrowserRouter>
+      
+      
     </div>
   );
 }
