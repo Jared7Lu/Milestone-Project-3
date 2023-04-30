@@ -28,6 +28,7 @@ const Login = ({ setToken }) => {
     });
     if (error) throw error;
     setToken(data);
+    console.log(data);
     navigate("/main-page");
   };
 

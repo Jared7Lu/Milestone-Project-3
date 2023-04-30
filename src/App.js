@@ -33,7 +33,7 @@ function App() {
         <Routes>
           <Route path={"/register"} element={ <Register />}/>
           <Route path={"/"} element={ <Login setToken={setToken}/>}/>
-          <Route path={"/account"} element={ <Account />}/>
+          {token?<Route path={"/account"} element={ <Account token={token} />}/>:""}
           <Route path={"/main-page"} element={ <MainPage />}/>
           <Route path={"/create-post"} element={ <CreatePost />}/>
           <Route path={"/delete-post"} element={ <DeletePost />}/>
