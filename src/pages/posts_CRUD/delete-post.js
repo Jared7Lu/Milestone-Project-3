@@ -1,7 +1,13 @@
 import supabase from "../../supabase"
 import { useState } from "react"
-    const deletePost = () => {
+    const DeletePost = () => {
         console.log("delete")
+    
+    return (
+        <div>
+            <button>delete</button>
+        </div>
+    )
 }
 
-export default deletePost;
+export default DeletePost;

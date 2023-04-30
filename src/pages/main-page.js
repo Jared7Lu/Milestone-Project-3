@@ -1,21 +1,28 @@
 import supabase from "../supabase";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./main.css"
+//Pages 
+import Post from "./posts_CRUD/post-component";
 
-//Pages
-import create_post from "./posts_CRUD/create-post";
-import delete_post from "./posts_CRUD/delete-post";
-import post from "./posts_CRUD/post-component";
-import update_post from "./posts_CRUD/update-post";
-import Account from "./account_CRUD/account-page";
-
-const mainPage = ({token}) => {
+const MainPage = ({token}) => {
   
     return (
-      <div>
-        <h3> {token.user.user_metadata.usrname}</h3>
+      <div className="main">
+        <div className="nav">
+            <nav >
+                <Link to="/create-page">Create</Link>
+                <Link to="/main-page">title</Link>
+                <Link to='/account'><h1>account</h1></Link>
+            </nav>
+        </div>
+        <div className="post">
+            <Post />
+        </div>
       </div>
     )
   }
 
 
-export default mainPage;
+export default MainPage;

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import supabase from "../../supabase";
 import { Link, useNavigate } from "react-router-dom";
+import "./forums.css"
 
 const Login = ({ setToken }) => {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const [signForm, setSignForm] = useState({
     email: "",
@@ -27,11 +28,12 @@ const Login = ({ setToken }) => {
     });
     if (error) throw error;
     setToken(data);
-    navigate('/main-page')
+    navigate("/main-page");
   };
 
   return (
-    <div>
+    <div className="Main">
+      <div className="forum">
       <form onSubmit={login}>
         <label>Email</label>
         <input
@@ -52,7 +54,8 @@ const Login = ({ setToken }) => {
         />
         <button type="submit">submit</button>
       </form>
-      <Link to='/register'>Sign Up</Link> 
+      <Link to="/register">Sign Up</Link>
+      </div>
     </div>
   );
 };

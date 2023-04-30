@@ -1,12 +1,12 @@
 import supabase from "../../supabase"
 import { useState } from "react"
-    const post = ({ post }) => {
+    const Post = ({ post }) => {
         <div>
-            <p>{post.username}</p>
+            {/* <p>{post.username}</p>
             <p>{post.link}</p>
             <p>{post.rating}</p>
-            <p>{post.created_at}</p>
+            <p>{post.created_at}</p> */}
         </div>
 }
 
-export default post;
+export default Post;

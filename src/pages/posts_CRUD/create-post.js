@@ -1,7 +1,14 @@
 import supabase from "../../supabase"
 import { useState } from "react"
-    const createPost = () => {
+    const CreatePost = () => {
         console.log("create")
+
+        return (
+            <div>
+                <button>create</button>
+            </div>
+        )
 }
 
-export default createPost;
+
+export default CreatePost;

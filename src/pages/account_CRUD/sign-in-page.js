@@ -1,13 +1,17 @@
 import { useState } from "react";
 import supabase from "../../supabase";
 import { Link } from "react-router-dom";
+import { Button, Form } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./forums.css"
+
 const Register = () => {
   const [signForm, setSignForm] = useState({
     email: "",
     username: "",
     password: "",
   });
-  
+
   function updateForm(event) {
     setSignForm((prevFormData) => {
       return {
@@ -16,7 +20,7 @@ const Register = () => {
       };
     });
   }
- 
+
   const createAccount = async (e) => {
     e.preventDefault();
     const { data, error } = await supabase.auth.signUp({
@@ -28,43 +32,45 @@ const Register = () => {
         },
       },
     });
-    if (error) throw error
-          console.log(data)
+    if (error) throw error;
+    console.log(data);
   };
 
   return (
-    <div>
-      <form onSubmit={createAccount}>
-        <label>Email</label>
-        <input
-          name="email"
-          type="text"
-          placeholder="example@email.com"
-          onChange={updateForm}
-          required
-        />
+    <div className="Main">
+      <div className="forum">
+        <Form onSubmit={createAccount}>
+          <label>Email</label>
+          <input
+            name="email"
+            type="text"
+            placeholder="example@email.com"
+            onChange={updateForm}
+            required
+          />
 
-        <label>Username</label>
-        <input
-          name="username"
-          type="text"
-          placeholder="username"
-          onChange={updateForm}
-          required
-        />
+          <label>Username</label>
+          <input
+            name="username"
+            type="text"
+            placeholder="username"
+            onChange={updateForm}
+            required
+          />
 
-        <labe>Password</labe>
-        <input
-          name="password"
-          type="password"
-          placeholder="password"
-          onChange={updateForm}
-          required
-        />
+          <labe>Password</labe>
+          <input
+            name="password"
+            type="password"
+            placeholder="password"
+            onChange={updateForm}
+            required
+          />
 
-        <button type="submit">submit</button>
-      </form>
-      <Link to='/'>log in</Link>
+          <Button type="submit">submit</Button>
+        </Form>
+        <Link to="/">log in</Link>
+      </div>
     </div>
   );
 };
