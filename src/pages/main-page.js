@@ -9,8 +9,28 @@ import { Route } from "react-router-dom";
 //Pages
 import CreatePost from "./posts_CRUD/create-post";
 import Account from "./account_CRUD/account-page";
+import PostCard from "../components/post-card";
 
 const MainPage = ({ token }) => {
+  const [ postInfo, setPostInfo ] = useState(null)
+
+  useEffect (() => {
+    const getData = async () => {
+      const {data, error} = await supabase
+      .from('product_reviews')
+      .select()
+
+      if (error) {
+        console.log(error)
+        setPostInfo(null)
+      }
+      if (data) {
+        setPostInfo(data)
+      }
+    }
+    getData()
+  }, [])
+
   return (
     <div className="main">
       <div className="sideBar">
@@ -21,6 +41,17 @@ const MainPage = ({ token }) => {
       </div>
       
       <div className="postCard"></div>
+          {postInfo && (
+            <div>
+            {postInfo.map( card => (
+              <div>
+              <p>{card.username}</p>
+              <p>{card.rating}</p>
+              </div>
+            )        
+            )}
+            </div>
+          )} 
     </div>
   );
 };
