@@ -44,12 +44,14 @@ const MainPage = ({ token }) => {
           {postInfo && (
             <div>
             {postInfo.map( card => (
-              <div>
-              <p>{card.username}</p>
-              <p>{card.rating}</p>
-              </div>
-            )        
+              <PostCard 
+                key={card.id}
+                card = {card}
+              />
+            )
+            
             )}
+            
             </div>
           )} 
     </div>

@@ -21,7 +21,7 @@ const CreatePost = ({token}) => {
             console.log(error)
         }
         if (data) {
-            navigate("/main-page")
+            navigate('/main-page')
         }
     }
 

@@ -9,7 +9,6 @@ import Register from "./pages/account_CRUD/sign-in-page";
 import Account from "./pages/account_CRUD/account-page";
 import MainPage from "./pages/main-page";
 import CreatePost from "./pages/posts_CRUD/create-post";
-import DeletePost from "./pages/posts_CRUD/delete-post";
 import UpdatePost from "./pages/posts_CRUD/update-post";
 
 function App() {
@@ -35,7 +34,6 @@ function App() {
           <Route path={"/main-page"} element={<MainPage />} />
           {token ? (<Route path={"/create-post"} element={<CreatePost token={token} />} />) : ("")}
           {/* <Route path={"/create-post"} element={<CreatePost />} /> */}
-          <Route path={"/delete-post"} element={<DeletePost />} />
           <Route path={"/update-post"} element={<UpdatePost />} />
         </Routes>
       </BrowserRouter>
