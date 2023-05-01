@@ -1,6 +1,10 @@
 import supabase from '../supabase'
 import { Link } from 'react-router-dom'
 
+import { TfiUser } from "react-icons/tfi";
+import { AiFillHome, AiOutlineUpload} from "react-icons/ai";
+import { TfiAlignJustify } from "react-icons/tfi";
+
 const PostCard = ({ card, onDelete }) => {
 
     const Delete = async () => {

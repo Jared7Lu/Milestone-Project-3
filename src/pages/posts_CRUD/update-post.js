@@ -1,10 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import supabase from "../../supabase";
-import SideBar from "../../components/side-nav";
-import CreatePost from "./create-post";
-import Account from "../account_CRUD/account-page";
-import { Route } from "react-router-dom";
 
 const UpdatePost = () => {
   const { id } = useParams();
@@ -15,22 +11,21 @@ const UpdatePost = () => {
   const [comment, setComment] = useState("");
 
   const Update = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const {data, error} = await supabase
-        .from('product_reviews')
-        .update([{ username, url, rating, comment }])
-        .eq('id', id)
-        .select()
+    const { data, error } = await supabase
+      .from("product_reviews")
+      .update([{ username, url, rating, comment }])
+      .eq("id", id)
+      .select();
 
-        if (error) {
-            console.log(error)
-        }
-        if (data) {
-            navigate('/main-page')
-        }
-        
-  }
+    if (error) {
+      console.log(error);
+    }
+    if (data) {
+      navigate("/main-page");
+    }
+  };
 
   useEffect(() => {
     const cardInfo = async () => {
@@ -55,11 +50,6 @@ const UpdatePost = () => {
 
   return (
     <div>
-      <div className="sideBar">
-        <SideBar>
-          
-        </SideBar>
-      </div>
       <form onSubmit={Update}>
         <label>username</label>
         <input

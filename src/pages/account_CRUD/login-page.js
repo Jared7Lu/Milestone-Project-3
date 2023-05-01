@@ -1,7 +1,6 @@
 import { useState } from "react";
 import supabase from "../../supabase";
 import { Link, useNavigate } from "react-router-dom";
-import "./forums.css";
 
 const Login = ({ setToken }) => {
   const navigate = useNavigate();

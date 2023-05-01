@@ -1,7 +1,6 @@
 import { useState } from "react";
 import supabase from "../../supabase";
 import { Link } from "react-router-dom";
-import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./forums.css";
 

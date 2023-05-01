@@ -3,12 +3,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
-import SideBar from "../components/side-nav";
 import { Route } from "react-router-dom";
 
-//Pages
-import CreatePost from "./posts_CRUD/create-post";
-import Account from "./account_CRUD/account-page";
+//Component
 import PostCard from "../components/post-card";
 
 const MainPage = ({ token }) => {
@@ -39,11 +36,11 @@ const MainPage = ({ token }) => {
 
   return (
     <div className="main">
-      <div className="sideBar">
-        <SideBar>
-          <Route path={"/create-post"} element={<CreatePost />} />
-          <Route path={"/account"} element={<Account />} />
-        </SideBar>
+      <div className="sideBar">  
+      <nav>
+        <Link to="/account">Home</Link>
+        <Link to="/create-post">Create</Link>
+      </nav>
       </div>
       
       <div className="postCard"></div>
@@ -55,10 +52,8 @@ const MainPage = ({ token }) => {
                 card = {card}
                 onDelete={Delete}
               />
-            )
-            
+            )     
             )}
-            
             </div>
           )} 
     </div>
