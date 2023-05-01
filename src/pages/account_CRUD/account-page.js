@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Account = ({ token }) => {
   let navigate = useNavigate();
-
+ 
   function Logout() {
     sessionStorage.removeItem("token");
     navigate("/");

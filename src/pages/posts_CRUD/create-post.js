@@ -4,12 +4,10 @@ import { useNavigate, Link } from "react-router-dom"
 
 const CreatePost = ({token}) => {
     const navigate = useNavigate();
-
     const [username, setUsername] = useState('')
     const [url, setUrl] = useState('')
     const [rating, setRating] = useState('')
     const [comment, setComment] = useState('')
-
     const postPost = async (e) => {
     e.preventDefault()
   
@@ -27,40 +25,46 @@ const CreatePost = ({token}) => {
     }
 
 return (
-    <div className="container">
-        <h1>create</h1>
-        <h3>{token.user.id}</h3>
-        <div className="forum">
+    <div className="Main">
+        <div className="forumContainer">
+        
             <form onSubmit={postPost}>
-                <label>username</label>
-                <input 
-                    value= {username} 
-                    type="text" 
-                    onChange={(e) => setUsername(e.target.value)}
+                <input className="usernameForum"
+                    disabled="disabled"
+                    value={username} 
+                    placeholder= {token.user.user_metadata.username}
+                    onChange={(e) => setUsername(token.user.user_metadata.username)}
                 />
-                
-                <label>url</label>
-                <textarea 
+
+                <input
+                    type="text" 
+                    placeholder="url to product"
                     value={url}
+                    required
                     onChange={(e) => setUrl(e.target.value)}
                 />
 
-                <label>rating</label>
                 <input 
                     type="number" 
+                    placeholder="Rating 1-10"
                     value={rating}
+                    required
                     onChange={(e) => setRating(e.target.value)}
                 />
 
-                <label>comment</label>
                 <textarea 
+                    placeholder="Comment"
                     value={comment}
+                    required
                     onChange={(e) => setComment(e.target.value)}
                 />
+                
                 <button type="submit">submit </button>
+                <div className="signinButton"> 
+                <Link to="/main-page">Home</Link>
+                </div>
             </form>
         </div>
-        <Link to="/account">account</Link>
     </div>
 )
 }
