@@ -1,4 +1,5 @@
 import supabase from '../supabase'
+import { Link } from 'react-router-dom'
 
 const PostCard = ({ card  }) => {
 
@@ -24,6 +25,7 @@ const PostCard = ({ card  }) => {
         <h4>{card.comment}</h4>
 
         <div>
+            <Link to={'/' + card.id}>update</Link>
             <button onClick={Delete}>delete</button>
         </div>
     </div>

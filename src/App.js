@@ -34,7 +34,7 @@ function App() {
           <Route path={"/main-page"} element={<MainPage />} />
           {token ? (<Route path={"/create-post"} element={<CreatePost token={token} />} />) : ("")}
           {/* <Route path={"/create-post"} element={<CreatePost />} /> */}
-          <Route path={"/update-post"} element={<UpdatePost />} />
+          <Route path={"/:id"} element={<UpdatePost />} />
         </Routes>
       </BrowserRouter>
     </div>

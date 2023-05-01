@@ -3,7 +3,6 @@ import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 
 const CreatePost = ({token}) => {
-    console.log("create")
     const navigate = useNavigate();
 
     const [username, setUsername] = useState('')
@@ -17,6 +16,8 @@ const CreatePost = ({token}) => {
     const {data, error } = await supabase
         .from('product_reviews')
         .insert([{ username, url, rating, comment }])
+        .select()
+
         if (error) {
             console.log(error)
         }
