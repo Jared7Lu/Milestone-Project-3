@@ -3,7 +3,7 @@ import supabase from "../../supabase";
 import { Link } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./forums.css"
+import "./forums.css";
 
 const Register = () => {
   const [signForm, setSignForm] = useState({
@@ -38,9 +38,9 @@ const Register = () => {
 
   return (
     <div className="Main">
-      <div className="forum">
-        <Form onSubmit={createAccount}>
-          <label>Email</label>
+      <div className="forumContainer">
+        <h1>Sign - Up</h1>
+        <form onSubmit={createAccount}>
           <input
             name="email"
             type="text"
@@ -49,7 +49,6 @@ const Register = () => {
             required
           />
 
-          <label>Username</label>
           <input
             name="username"
             type="text"
@@ -58,7 +57,6 @@ const Register = () => {
             required
           />
 
-          <label>Password</label>
           <input
             name="password"
             type="password"
@@ -66,10 +64,12 @@ const Register = () => {
             onChange={updateForm}
             required
           />
+          <button type="submit">submit</button>
 
-          <Button type="submit">submit</Button>
-        </Form>
-        <Link to="/">log in</Link>
+          <div className="signinButton">
+            <Link to="/">log in</Link>
+          </div>
+        </form>
       </div>
     </div>
   );
