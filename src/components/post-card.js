@@ -1,19 +1,21 @@
 import supabase from '../supabase'
 import { Link } from 'react-router-dom'
 
-const PostCard = ({ card  }) => {
+const PostCard = ({ card, onDelete }) => {
 
     const Delete = async () => {
         const {data, error} = await supabase
         .from('product_reviews')
         .delete()
         .eq('id', card.id)
+        .select()
 
         if (error) {
             console.log(error)
         }
         if (data) {
-            console.lof(error)
+            console.log(data)
+            onDelete(card.id)
         }
     }
 

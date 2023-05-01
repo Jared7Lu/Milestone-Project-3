@@ -14,6 +14,12 @@ import PostCard from "../components/post-card";
 const MainPage = ({ token }) => {
   const [ postInfo, setPostInfo ] = useState(null)
 
+  const Delete  = (id) => {
+    setPostInfo(prevPostInfo => {
+      return prevPostInfo.filter(dp => dp.id !== id)
+    })
+  }
+
   useEffect (() => {
     const getData = async () => {
       const {data, error} = await supabase
@@ -47,6 +53,7 @@ const MainPage = ({ token }) => {
               <PostCard 
                 key={card.id}
                 card = {card}
+                onDelete={Delete}
               />
             )
             
