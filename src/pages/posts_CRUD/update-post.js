@@ -1,6 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import supabase from "../../supabase";
+import SideBar from "../../components/side-nav";
+import CreatePost from "./create-post";
+import Account from "../account_CRUD/account-page";
+import { Route } from "react-router-dom";
 
 const UpdatePost = () => {
   const { id } = useParams();
@@ -51,6 +55,11 @@ const UpdatePost = () => {
 
   return (
     <div>
+      <div className="sideBar">
+        <SideBar>
+          
+        </SideBar>
+      </div>
       <form onSubmit={Update}>
         <label>username</label>
         <input

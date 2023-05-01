@@ -1,7 +1,7 @@
 import { useState } from "react";
 import supabase from "../../supabase";
 import { Link, useNavigate } from "react-router-dom";
-import "./forums.css"
+import "./forums.css";
 
 const Login = ({ setToken }) => {
   const navigate = useNavigate();
@@ -34,28 +34,29 @@ const Login = ({ setToken }) => {
 
   return (
     <div className="Main">
-      <div className="forum">
-      <form onSubmit={login}>
-        <label>Email</label>
-        <input
-          name="email"
-          type="text"
-          placeholder="example@email.com"
-          onChange={updateForm}
-          required
-        />
+      <div className="forumContainer">
+        <h1>Log - In</h1>
+        <form onSubmit={login}>
+          <input
+            name="email"
+            type="text"
+            placeholder="EMAIL"
+            onChange={updateForm}
+            required
+          />
 
-        <labe>Password</labe>
-        <input
-          name="password"
-          type="password"
-          placeholder="password"
-          onChange={updateForm}
-          required
-        />
-        <button type="submit">submit</button>
-      </form>
-      <Link to="/register">Sign Up</Link>
+          <input
+            name="password"
+            type="password"
+            placeholder="PASSWORD"
+            onChange={updateForm}
+            required
+          />
+          <button type="submit">Submit</button>
+          <div className="signinButton">
+            <Link to="/register">Sign Up</Link>
+          </div>
+        </form>
       </div>
     </div>
   );

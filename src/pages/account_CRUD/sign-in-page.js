@@ -58,7 +58,7 @@ const Register = () => {
             required
           />
 
-          <labe>Password</labe>
+          <label>Password</label>
           <input
             name="password"
             type="password"

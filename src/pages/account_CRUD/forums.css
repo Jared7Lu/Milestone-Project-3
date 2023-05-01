@@ -8,15 +8,53 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.988);
+    background-image: linear-gradient(79deg, #000000, #C66FBC 48%, #8e1ff6);
 }
-.forum {
+
+.forumContainer {
     height: 30em;
     width: 35em;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    background-color: rgb(226, 43, 43);
+    border-radius: 5%;
+    justify-content: center;
+    background-color: white;
 }
+
+.signinButton {
+    border: none;
+    height: 4em;
+    width: 25%;
+    margin-left: 210px;
+    margin-top: 10px;
+    border-radius: .25em;
+    text-align: center;
+    padding: 2em;
+}
+
+label {
+    text-align: left;
+    padding: 0.25rem 0;
+}
+
+input {
+    border: none;
+    height: 4em;
+    width: 100%;
+    border-radius: .25em;
+    text-align: center;
+    padding: 2em;
+}
+
+button {
+    border: 1px;
+    height: 4em;
+    width: 100%;
+    border-radius: .25em;
+    text-align: center;
+    padding: 2em;
+    background-image: linear-gradient(79deg, #e1f5ff, #93f5f8 48%, #73e2d7);
+}
+
