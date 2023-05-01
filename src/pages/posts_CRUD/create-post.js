@@ -27,7 +27,6 @@ const CreatePost = ({token}) => {
 return (
     <div className="Main">
         <div className="forumContainer">
-        
             <form onSubmit={postPost}>
                 <input className="usernameForum"
                     disabled="disabled"
@@ -58,7 +57,7 @@ return (
                     required
                     onChange={(e) => setComment(e.target.value)}
                 />
-                
+
                 <button type="submit">submit </button>
                 <div className="signinButton"> 
                 <Link to="/main-page">Home</Link>

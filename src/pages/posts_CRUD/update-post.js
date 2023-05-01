@@ -49,32 +49,42 @@ const UpdatePost = () => {
   }, [id]);
 
   return (
-    <div>
-      <form onSubmit={Update}>
-        <label>username</label>
-        <input
-          value={username}
-          type="text"
-          onChange={(e) => setUsername(e.target.value)}
-        />
+    <div className="Main">
+      <div className="forumContainer">
+        <h1>Edit</h1>
+        <form onSubmit={Update}>
+          <input className="usernameEditForum"
+            value={username}
+            disabled="disabled"
+            onChange={(e) => setUsername(username)}
+          />
 
-        <label>url</label>
-        <textarea value={url} onChange={(e) => setUrl(e.target.value)} />
+          <input
+            type="text"
+            placeholder="url to product"
+            value={url}
+            required
+            onChange={(e) => setUrl(e.target.value)}
+          />
 
-        <label>rating</label>
-        <input
-          type="number"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-        />
+          <input
+            type="number"
+            placeholder="Rating 1-10"
+            value={rating}
+            required
+            onChange={(e) => setRating(e.target.value)}
+          />
 
-        <label>comment</label>
-        <textarea
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
-        <button type="submit">submit </button>
-      </form>
+          <textarea
+            placeholder="Comment"
+            value={comment}
+            required
+            onChange={(e) => setComment(e.target.value)}
+          />
+
+          <button type="submit">submit </button>
+        </form>
+      </div>
     </div>
   );
 };
