@@ -70,8 +70,9 @@ textarea {
     font-size: 40px;
 }
 
-.usernameEditForum, input[value=username]{
+.usernameEditForum input[value=username]{
     color: rgb(255, 72, 72);
     font-size: 23px;
 }
+
 

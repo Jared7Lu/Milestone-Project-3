@@ -5,57 +5,49 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
 import { Route } from "react-router-dom";
 
+
 //Component
 import PostCard from "../components/post-card";
+import NavBar from "../components/navBar";
 
 const MainPage = ({ token }) => {
-  const [ postInfo, setPostInfo ] = useState(null)
+  const [postInfo, setPostInfo] = useState(null);
 
-  const Delete  = (id) => {
-    setPostInfo(prevPostInfo => {
-      return prevPostInfo.filter(dp => dp.id !== id)
-    })
-  }
+  const Delete = (id) => {
+    setPostInfo((prevPostInfo) => {
+      return prevPostInfo.filter((dp) => dp.id !== id);
+    });
+  };
 
-  useEffect (() => {
+  useEffect(() => {
     const getData = async () => {
-      const {data, error} = await supabase
-      .from('product_reviews')
-      .select()
+      const { data, error } = await supabase.from("product_reviews").select();
 
       if (error) {
-        console.log(error)
-        setPostInfo(null)
+        console.log(error);
+        setPostInfo(null);
       }
       if (data) {
-        setPostInfo(data)
+        setPostInfo(data);
       }
-    }
-    getData()
-  }, [])
+    };
+    getData();
+  }, []);
 
   return (
-    <div className="main">
-      <div className="sideBar">  
-      <nav>
-        <Link to="/account">Home</Link>
-        <Link to="/create-post">Create</Link>
-      </nav>
+    <div className="mainPage">
+      <div className="navBar">
+        <NavBar />
       </div>
-      
-      <div className="postCard"></div>
-          {postInfo && (
-            <div>
-            {postInfo.map( card => (
-              <PostCard 
-                key={card.id}
-                card = {card}
-                onDelete={Delete}
-              />
-            )     
-            )}
-            </div>
-          )} 
+
+      <div className="postCardDisplay"></div>
+      {postInfo && (
+        <div>
+          {postInfo.map((card) => (
+            <PostCard key={card.id} card={card} onDelete={Delete} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

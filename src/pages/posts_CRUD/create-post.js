@@ -27,6 +27,7 @@ const CreatePost = ({token}) => {
 return (
     <div className="Main">
         <div className="forumContainer">
+            <h1>Create</h1>
             <form onSubmit={postPost}>
                 <input className="usernameForum"
                     disabled="disabled"

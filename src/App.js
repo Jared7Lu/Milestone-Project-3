@@ -28,20 +28,12 @@ function App() {
         <Routes>
           <Route path={"/register"} element={<Register />} />
           <Route path={"/"} element={<Login setToken={setToken} />} />
-          {token ? (
-            <Route path={"/account"} element={<Account token={token} />} />
-          ) : (
-            ""
-          )}
           <Route path={"/main-page"} element={<MainPage />} />
-          {token ? (
-            <Route
-              path={"/create-post"}
-              element={<CreatePost token={token} />}
-            />
-          ) : (
-            ""
-          )}
+
+          {token ? ( <Route path={"/account"} element={<Account token={token} />} />) : ("" )}
+
+          {token ? (<Route path={"/create-post"} element={<CreatePost token={token} />}/>) : ("")}
+
           <Route path={"/:id"} element={<UpdatePost />} />
         </Routes>
       </BrowserRouter>

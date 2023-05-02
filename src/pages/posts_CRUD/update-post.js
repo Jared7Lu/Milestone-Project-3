@@ -46,7 +46,7 @@ const UpdatePost = () => {
       }
     };
     cardInfo();
-  }, [id]);
+  }, [id, navigate]);
 
   return (
     <div className="Main">
