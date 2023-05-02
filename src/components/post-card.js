@@ -23,7 +23,7 @@ const PostCard = ({ card, onDelete }) => {
   return (
     <div className="postCard">
       <h4>{card.username}</h4>
-      <h3>{card.url}</h3>
+      <h6>{card.url}</h6>
       <h4>{card.rating}</h4>
       <p>{card.comment}</p>
 

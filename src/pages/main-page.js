@@ -1,10 +1,7 @@
 import supabase from "../supabase";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
-import { Route } from "react-router-dom";
-
 
 //Component
 import PostCard from "../components/post-card";

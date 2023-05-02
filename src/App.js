@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 //pages
@@ -8,6 +8,7 @@ import Account from "./pages/account_CRUD/account-page";
 import MainPage from "./pages/main-page";
 import CreatePost from "./pages/posts_CRUD/create-post";
 import UpdatePost from "./pages/posts_CRUD/update-post";
+import supabase from "./supabase";
 
 function App() {
   const [token, setToken] = useState(false);

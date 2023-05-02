@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import supabase from "../../supabase";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./forums.css";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [signForm, setSignForm] = useState({
     email: "",
     username: "",
@@ -33,6 +35,7 @@ const Register = () => {
     });
     if (error) throw error;
     console.log(data);
+    navigate("/");
   };
 
   return (
