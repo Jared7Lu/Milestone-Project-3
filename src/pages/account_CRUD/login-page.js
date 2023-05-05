@@ -34,8 +34,9 @@ const Login = ({ setToken }) => {
   return (
     <div className="Main">
       <div className="forumContainer">
-        <h1>Log - In</h1>
+        <h1 className="forumHeader">Log - In</h1>
         <form onSubmit={login}>
+
           <input
             name="email"
             type="text"
@@ -51,6 +52,7 @@ const Login = ({ setToken }) => {
             onChange={updateForm}
             required
           />
+          
           <div className="routerButtons">
             <button type="submit">Submit</button>
           </div>

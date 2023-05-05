@@ -27,8 +27,9 @@ const CreatePost = ({token}) => {
 return (
     <div className="Main">
         <div className="forumContainer">
-            <h1>Create</h1>
+            <h1 className="forumHeader">Create</h1>
             <form onSubmit={postPost}>
+
                 <input className="usernameForum"
                     disabled="disabled"
                     value={username} 
@@ -59,8 +60,11 @@ return (
                     onChange={(e) => setComment(e.target.value)}
                 />
 
+                <div className="routerButtons">
                 <button type="submit">submit </button>
-                <div className="signinButton"> 
+                </div>
+                
+                <div className="createRouterButton"> 
                 <Link to="/main-page">Home</Link>
                 </div>
             </form>

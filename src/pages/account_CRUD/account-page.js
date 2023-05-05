@@ -10,13 +10,16 @@ const Account = ({ token }) => {
     navigate("/");
   }
   return (
-    <div className="mainPage">
+    <div className="Main">
+     
       <h1 className="mainTitle">Hello, <h3>{token.user.user_metadata.username}</h3></h1>
+      <div className="createRouterButton">
       <Link to="/main-page">
         <Button>main page</Button>
-      </Link>
+      </Link>    
+      </div>
       
-      <Button onClick={Logout}>logout</Button>
+      <Button onClick={Logout}>logout</Button>  
     </div>
   );
 };

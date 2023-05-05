@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import supabase from "../../supabase";
 
@@ -51,9 +51,10 @@ const UpdatePost = () => {
   return (
     <div className="Main">
       <div className="forumContainer">
-        <h1>Edit</h1>
+        <h1 className="forumHeader">Edit</h1>
         <form onSubmit={Update}>
-          <input className="usernameEditForum"
+          <input
+            className="usernameEditForum"
             value={username}
             disabled="disabled"
             onChange={(e) => setUsername(username)}
@@ -82,7 +83,13 @@ const UpdatePost = () => {
             onChange={(e) => setComment(e.target.value)}
           />
 
-          <button type="submit">submit </button>
+          <div className="routerButtons">
+            <button type="submit">submit </button>
+          </div>
+
+          <div className="createRouterButton">
+            <Link to="/main-page">Home</Link>
+          </div>
         </form>
       </div>
     </div>

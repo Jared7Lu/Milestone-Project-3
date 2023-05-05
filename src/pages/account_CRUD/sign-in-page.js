@@ -42,8 +42,9 @@ const Register = () => {
   return (
     <div className="Main">
       <div className="forumContainer">
-        <h1>Sign - Up</h1>
+        <h1 className="forumHeader">Sign - Up</h1>
         <form onSubmit={createAccount}>
+
           <input
             name="email"
             type="text"
@@ -67,9 +68,12 @@ const Register = () => {
             onChange={updateForm}
             required
           />
-          <button type="submit">submit</button>
+          
+          <div className="routerButtons">
+            <button type="submit">submit</button>
+          </div>
 
-          <div className="signinButton">
+          <div className="bottomLink">
             <Link to="/">log in</Link>
           </div>
         </form>
