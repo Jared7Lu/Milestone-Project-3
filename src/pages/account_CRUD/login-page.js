@@ -51,8 +51,11 @@ const Login = ({ setToken }) => {
             onChange={updateForm}
             required
           />
-          <button type="submit">Submit</button>
-          <div className="signinButton">
+          <div className="routerButtons">
+            <button type="submit">Submit</button>
+          </div>
+          
+          <div className="bottomLink">
             <Link to="/register">Sign Up</Link>
           </div>
         </form>

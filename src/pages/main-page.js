@@ -37,14 +37,15 @@ const MainPage = ({ token }) => {
         <NavBar />
       </div>
 
-      <div className="postCardDisplay"></div>
-      {postInfo && (
-        <div>
-          {postInfo.map((card) => (
-            <PostCard key={card.id} card={card} onDelete={Delete} />
-          ))}
-        </div>
-      )}
+      <div className="postCardDisplay">
+        {postInfo && (
+          <>
+            {postInfo.map((card) => (
+              <PostCard key={card.id} card={card} onDelete={Delete} />
+            ))}
+          </>
+        )}
+      </div>
     </div>
   );
 };

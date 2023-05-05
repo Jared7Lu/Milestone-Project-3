@@ -1,54 +1,59 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .mainPage {
-    background-image: linear-gradient(79deg, #000000, #c652e9 48%, #370369);
-    height: 100vh;
+  background-image: linear-gradient(77deg, #000000, #3a2241, #f54a4a, #c047ce);
+  height: 100vh;
 }
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  height: 100px;
 }
 
 .navlink {
-    display: flex;
-    justify-content: space-evenly;
-    word-spacing: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .link {
-    font-size: large;
-    margin-left: 10px;
-    padding: 10px;
-    color:coral
+  margin-left: 10px;
+  padding: 30px;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
 }
 
 .postCardDisplay {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 100px
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 100px;
 }
 
 .postCard {
-    text-align: center;
-    margin-top: 30px;
-    width: auto;
+  text-align: center;
+  margin-top: 20px;
+  width: auto;
   padding: 5px;
-  background: rgb(242, 145, 110);
-  box-sizing: border-box;
+  background: rgb(255, 224, 224);
+  border-style: double;
+  border-color: #000000;
+  border-width: 1em;
   border-radius: 3px;
   position: relative;
 }
 
 .postCardButtons {
-    text-align: right;
+  text-align: left;
+  font-size: 20px;
 }
 
 .mainTitle {
-    color:white;
-
+  margin-right: 30px;
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  text-shadow: 2px 1px;
 }

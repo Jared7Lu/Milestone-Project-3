@@ -27,6 +27,7 @@ const Register = () => {
     const { data, error } = await supabase.auth.signUp({
       email: signForm.email,
       password: signForm.password,
+      disable_signup_verification: true,
       options: {
         data: {
           username: signForm.username,

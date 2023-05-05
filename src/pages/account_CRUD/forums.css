@@ -1,78 +1,100 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
+
 .Main {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(79deg, #000000, #c652e9 48%, #370369);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(77deg, #000000, #3a2241, #f54a4a, #c047ce);
 }
 
 .forumContainer {
-    height: 30em;
-    width: 35em;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 5%;
-    justify-content: center;
-    background-color: white;
+  height: 30em;
+  width: 35em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5%;
+  justify-content: center;
+  border-style: double;
+  border-color: #000000;
+  border-width: 1em;
+  border-radius: 3px;
 }
 
-.signinButton {
-    border: none;
-    height: 4em;
-    width: 100%;
-    margin-top: 10px;
-    text-align: center;
-    padding: 2em;
+.routerButtons {
+  border: 1px;
+  height: 4em;
+  width: auto;
+  border-radius: 0.25em;
+  text-align: center;
+  padding: 2em;
+}
+
+.bottomLink {
+  border: none;
+  height: 4em;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  padding: 2em;
+}
+
+a {
+  color: aliceblue;
 }
 
 label {
-    text-align: left;
-    padding: 0.25rem 0;
+  text-align: left;
+  padding: 0.25rem;
 }
 
 input {
-    border: none;
-    height: 4em;
-    width: 100%;
-    border-radius: .25em;
-    text-align: center;
-    padding: 2em;
+  border: none;
+  height: 4em;
+  width: 100%;
+  border-radius: 0.25em;
+  text-align: center;
+  padding: 2em;
+  opacity: 0.35;
+}
+
+input::placeholder {
+  font-weight: 500;
+  color: rgb(0, 0, 0);
 }
 
 button {
-    border: 1px;
-    height: 4em;
-    width: 100%;
-    border-radius: .25em;
-    text-align: center;
-    padding: 2em;
-    background-image: linear-gradient(79deg, #d0d2d2, #9ff5f7 48%, #bec3c3);
+  border: 1px;
+  height: 4em;
+  width: auto;
+  border-radius: 10%;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 500;
 }
 
 textarea {
-    border: none;
-    height: 6em;
-    width: 100%;
-    border-radius: .25em;
-    text-align: center;
-    padding: 2em;
+  border: none;
+  height: 6em;
+  width: 100%;
+  border-radius: 0.25em;
+  text-align: center;
+  padding: 2em;
 }
 
 .usernameForum::placeholder {
-    color: rgb(255, 72, 72);
-    font-size: 40px;
+  color: rgb(255, 72, 72);
+  font-size: 40px;
 }
 
-.usernameEditForum input[value=username]{
-    color: rgb(255, 72, 72);
-    font-size: 23px;
+.usernameEditForum input[value="username"] {
+  color: rgb(255, 72, 72);
+  font-size: 23px;
 }
-
-
