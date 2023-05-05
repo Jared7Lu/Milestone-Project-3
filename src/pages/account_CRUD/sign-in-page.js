@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import supabase from "../../supabase";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Modal from "react-bootstrap/Modal";
 import "./forums.css";
 
 const Register = () => {
-  const navigate = useNavigate();
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+
   const [signForm, setSignForm] = useState({
     email: "",
     username: "",
@@ -27,7 +29,6 @@ const Register = () => {
     const { data, error } = await supabase.auth.signUp({
       email: signForm.email,
       password: signForm.password,
-      disable_signup_verification: true,
       options: {
         data: {
           username: signForm.username,
@@ -36,7 +37,8 @@ const Register = () => {
     });
     if (error) throw error;
     console.log(data);
-    navigate("/");
+    setShow(true);
+    console.log("submitted");
   };
 
   return (
@@ -44,7 +46,6 @@ const Register = () => {
       <div className="forumContainer">
         <h1 className="forumHeader">Sign - Up</h1>
         <form onSubmit={createAccount}>
-
           <input
             name="email"
             type="text"
@@ -68,7 +69,7 @@ const Register = () => {
             onChange={updateForm}
             required
           />
-          
+
           <div className="routerButtons">
             <button type="submit">submit</button>
           </div>
@@ -78,6 +79,21 @@ const Register = () => {
           </div>
         </form>
       </div>
+
+      {/* Prompt to verify email */}
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Your are so Close</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Please verify you email address, a link was sent to it.
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };

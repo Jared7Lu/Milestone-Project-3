@@ -9,7 +9,6 @@ import MainPage from "./pages/main-page";
 import CreatePost from "./pages/posts_CRUD/create-post";
 import UpdatePost from "./pages/posts_CRUD/update-post";
 
-
 function App() {
   const [token, setToken] = useState(false);
   if (token) {
@@ -30,12 +29,22 @@ function App() {
           <Route path={"/register"} element={<Register />} />
           <Route path={"/"} element={<Login setToken={setToken} />} />
           <Route path={"/main-page"} element={<MainPage />} />
-
-          {token ? ( <Route path={"/account"} element={<Account token={token} />} />) : ("" )}
-
-          {token ? (<Route path={"/create-post"} element={<CreatePost token={token} />}/>) : ("")}
-
           <Route path={"/:id"} element={<UpdatePost />} />
+
+          {token ? (
+            <Route path={"/account"} element={<Account token={token} />} />
+          ) : (
+            ""
+          )}
+
+          {token ? (
+            <Route
+              path={"/create-post"}
+              element={<CreatePost token={token} />}
+            />
+          ) : (
+            ""
+          )}
         </Routes>
       </BrowserRouter>
     </div>
